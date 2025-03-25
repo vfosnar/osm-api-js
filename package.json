@@ -17,7 +17,7 @@
     "openstreetmap",
     "openstreetmap api"
   ],
-  "repository": "https://github.com/k-yle/osm-api-js",
+  "repository": "https://github.com/osmlab/osm-api-js",
   "scripts": {
     "build": "rm -rf dist && tsc --emitDeclarationOnly && rm -rf dist/__tests__ && browserify -s OSM src/index.ts -p tsify > dist/index.js && uglifyjs dist/index.js > dist/index.min.js",
     "lint": "eslint .",

@@ -5,7 +5,7 @@ import { listChangesets } from "osm-api";
 
 await listChangesets({
   // for a list of possible queries,
-  // see https://github.com/k-yle/osm-api-js/blob/5c3bd7193a22fead983cb4337140df2c72da7a8c/src/api/changesets/getChangesets.ts#L29-L48
+  // see https://github.com/osmlab/osm-api-js/blob/5c3bd719/src/api/changesets/getChangesets.ts#L29-L48
 });
 ```
 
