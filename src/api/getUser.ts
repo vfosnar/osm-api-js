@@ -1,4 +1,4 @@
-import type { OsmOwnUser, OsmUser } from "../types";
+import type { OsmOwnUser, OsmUser, OsmUserBlock } from "../types";
 import { osmFetch } from "./_osmFetch";
 
 export async function getUser(user: number): Promise<OsmUser>;
@@ -24,4 +24,22 @@ export async function getUsers(users: number[]): Promise<OsmUser[]> {
     ...u,
     account_created: new Date(u.account_created),
   }));
+}
+
+/** gets details about a DWG block given the ID of the block */
+export async function getUserBlockById(blockId: number): Promise<OsmUserBlock> {
+  const raw = await osmFetch<{ user_block: OsmUserBlock }>(
+    `/0.6/user_blocks/${blockId}.json`
+  );
+
+  return raw.user_block;
+}
+
+/** lists any blocks that are currently active for the authenticated user */
+export async function getOwnUserBlocks(): Promise<OsmUserBlock[]> {
+  const raw = await osmFetch<{ user_blocks: OsmUserBlock[] }>(
+    "/0.6/user/blocks/active"
+  );
+
+  return raw.user_blocks;
 }

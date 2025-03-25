@@ -72,6 +72,8 @@ All methods return promises. Examples requests and responses are available for a
   - [`getUser`](./examples/getUser.md)
   - [`getUsers`](./examples/getUsers.md)
   - [`getUIdFromDisplayName`](./examples/getUIdFromDisplayName.md)
+  - [`getUserBlockById`](./examples/getUserBlockById.md)
+  - 🔑 [`getOwnUserBlocks`](./examples/getOwnUserBlocks.md)
 - Messaging
   - 🔑 [`deleteMessage()`](./examples/deleteMessage.md)
   - 🔑 [`getMessage()`](./examples/getMessage.md)

@@ -8,10 +8,12 @@ import {
   getFeature,
   getMessage,
   getNotesForQuery,
+  getOwnUserBlocks,
   getPermissions,
   getPreferences,
   getUIdFromDisplayName,
   getUser,
+  getUserBlockById,
   listChangesets,
   listMessages,
 } from "..";
@@ -89,6 +91,10 @@ describe("end to end tests", () => {
     expect(await getNotesForQuery({ q: "cycleway" })).toMatchSnapshot();
   });
 
+  it("getUserBlockById", async () => {
+    expect(await getUserBlockById(1)).toMatchSnapshot();
+  });
+
   (auth ? describe : describe.skip)("APIs requiring authentication", () => {
     it("listMessages", async () => {
       expect(await listMessages("outbox")).toMatchSnapshot();
@@ -100,6 +106,10 @@ describe("end to end tests", () => {
 
     it("getPreferences", async () => {
       expect(await getPreferences()).toMatchSnapshot();
+    });
+
+    it("getOwnUserBlocks", async () => {
+      expect(await getOwnUserBlocks()).toMatchSnapshot();
     });
   });
 });

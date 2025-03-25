@@ -22,3 +22,19 @@ export type OsmOwnUser = OsmUser & {
     sent: { count: number };
   };
 };
+
+export interface OsmUserBlock {
+  id: number;
+  /** ISO Date */
+  created_at: string;
+  /** ISO Date */
+  updated_at: string;
+  /** ISO Date */
+  ends_at: string;
+  needs_view: boolean;
+  user: { uid: number; user: string };
+  creator: { uid: number; user: string };
+  /** field only exists if the block has already been revoked */
+  revoker?: { uid: number; user: string };
+  reason: string;
+}
