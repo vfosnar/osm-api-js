@@ -6,3 +6,4 @@ temp
 yarn.lock
 __diff_output__
 .jest*
+.env
