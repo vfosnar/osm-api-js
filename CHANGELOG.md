@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 2.5.0 (2025-04-02)
+
+- Allow custom HTTP headers or an `AbortSignal` to be passed to every API method.
 - Added 2 new functions to get user-blocks
+- Git repository moved to the [osmlab](https://github.com/osmlab) organisation.
+- Automatically split large changesets into chunks before uploading, if the changeset were to exceed the maximum number of features allowed by the API.
 
 ## 2.4.0 (2025-01-16)
 
